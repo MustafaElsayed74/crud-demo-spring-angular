@@ -10,7 +10,7 @@ describe('GetAllCustomers', () => {
     await TestBed.configureTestingModule({
       declarations: [GetAllCustomers]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(GetAllCustomers);
     component = fixture.componentInstance;

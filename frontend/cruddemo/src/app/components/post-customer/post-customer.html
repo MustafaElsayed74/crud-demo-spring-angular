@@ -1,1 +1,50 @@
-<p>post-customer works!</p>
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div class="card shadow p-4" style="width: 420px; border-radius: 18px;">
+
+        <h4 class="text-center mb-4 fw-bold">Add New Customer</h4>
+
+        <form [formGroup]="postCustomerForm" (ngSubmit)="postCustomer()">
+
+            <!-- Name -->
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+
+                <input type="text" class="form-control" placeholder="Enter full name" formControlName="name"
+                    [ngClass]="{'is-invalid': postCustomerForm.get('name')?.invalid && postCustomerForm.get('name')?.touched}">
+
+                <div class="invalid-feedback">
+                    Name is required
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+
+                <input type="email" class="form-control" placeholder="Enter email" formControlName="email"
+                    [ngClass]="{'is-invalid': postCustomerForm.get('email')?.invalid && postCustomerForm.get('email')?.touched}">
+
+                <div class="invalid-feedback">
+                    Please enter a valid email
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+
+                <input type="text" class="form-control" placeholder="Enter phone" formControlName="phone"
+                    [ngClass]="{'is-invalid': postCustomerForm.get('phone')?.invalid && postCustomerForm.get('phone')?.touched}">
+
+                <div class="invalid-feedback">
+                    Phone must be at least 10 digits
+                </div>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2" type="submit" [disabled]="postCustomerForm.invalid">
+                Add Customer
+            </button>
+
+        </form>
+    </div>
+</div>
