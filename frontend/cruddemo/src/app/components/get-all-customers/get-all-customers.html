@@ -1,0 +1,61 @@
+<div class="container mt-5">
+
+    <!-- Header + Add Button -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Customers List</h3>
+
+        <a class="btn btn-primary px-4" routerLink="/customer">
+            + Add Customer
+        </a>
+    </div>
+
+    <div class="input-group mb-4">
+        <span class="input-group-text">
+            <i class="bi bi-search"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Search customers..." [(ngModel)]="searchText">
+    </div>
+
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-secondary">
+            <tr>
+                <th>#</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let c of customers ; let i = index">
+                <td>{{ i + 1 }}</td>
+
+                <td>
+                    <span class="fw-semibold">{{ c.name }}</span>
+                </td>
+
+                <td>{{ c.email }}</td>
+
+                <td>
+                    <span class="badge bg-info text-dark">{{ c.phone }}</span>
+                </td>
+
+                <td class="text-center">
+
+                    <!-- Edit -->
+                    <button class="btn btn-sm btn-outline-primary me-1" (click)="editCustomer(c)">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+
+                    <!-- Delete -->
+                    <button class="btn btn-sm btn-outline-danger" (click)="deleteCustomer(c)">
+                        <i class="bi bi-trash"></i>
+                    </button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

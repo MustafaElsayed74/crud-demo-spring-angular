@@ -17,4 +17,8 @@ export class CustomerService {
   postCustomer(customer: any): Observable<any> {
     return this.http.post(BASE_URL + '/api/customers', customer);
   }
+
+  getAllCustomers(): Observable<any> {
+    return this.http.get(BASE_URL + '/api/customers');
+  }
 }

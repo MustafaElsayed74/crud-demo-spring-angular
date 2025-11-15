@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PostCustomer } from './components/post-customer/post-customer';
 import { GetAllCustomers } from './components/get-all-customers/get-all-customers';
+import { UpdateCustomer } from './components/update-customer/update-customer';
 
 const routes: Routes = [
-  { path: 'customer', component: PostCustomer },
   { path: '', component: GetAllCustomers },
+  { path: 'customer', component: PostCustomer },
+
 
 ];
 
