@@ -1,7 +1,7 @@
 import { Component, resource } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerService } from '../../services/customer-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-customer',
@@ -16,7 +16,8 @@ export class UpdateCustomer {
 
   constructor(private customerService: CustomerService,
     private fb: FormBuilder,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.id = this.activateRoute.snapshot.params['id'];
   }
@@ -40,6 +41,11 @@ export class UpdateCustomer {
     })
   }
 
-  updateCustomer() { }
+  updateCustomer() {
+    this.customerService.updateCustomer(this.id, this.updateCustomerForm.value).subscribe(result => {
+      console.log(result);
+      this.router.navigate(['/']);
+    })
+  }
 }
 

@@ -3,9 +3,8 @@
 
         <h4 class="text-center mb-4 fw-bold">Update Customer</h4>
 
-        <form [formGroup]="updateCustomerForm" (ngSubmit)="updateCustomer()">
+        <form [formGroup]="updateCustomerForm">
 
-            <!-- Name -->
             <div class="mb-3">
                 <label class="form-label">Full Name</label>
 
@@ -17,7 +16,6 @@
                 </div>
             </div>
 
-            <!-- Email -->
             <div class="mb-3">
                 <label class="form-label">Email Address</label>
 
@@ -29,7 +27,6 @@
                 </div>
             </div>
 
-            <!-- Phone -->
             <div class="mb-3">
                 <label class="form-label">Phone Number</label>
 
@@ -41,8 +38,8 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary w-100 py-2" type="submit" [disabled]="updateCustomerForm.invalid"
-                routerLink="/">
+            <button class="btn btn-primary w-100 py-2" type="submit" (click)="updateCustomer()"
+                [disabled]="updateCustomerForm.invalid" routerLink="/">
                 Update Customer
             </button>
 
