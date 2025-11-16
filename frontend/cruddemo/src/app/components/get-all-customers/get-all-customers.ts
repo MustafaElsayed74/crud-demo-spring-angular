@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CustomerService } from '../../services/customer-service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-get-all-customers',
@@ -30,12 +31,22 @@ export class GetAllCustomers {
     });
   }
 
-  editCustomer(c: any) {
 
-  }
-
-  deleteCustomer(c: any) {
-
+  deleteCustomer(id: number) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This action cannot be undone",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.customerService.deleteCustomer(id).subscribe(() => {
+          Swal.fire('Deleted!', 'Customer has been removed.', 'success');
+          this.getAllCustomers();
+        });
+      }
+    });
   }
 
 

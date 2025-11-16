@@ -30,4 +30,9 @@ export class CustomerService {
   updateCustomer(id: number, customer: any): Observable<any> {
     return this.http.put(BASE_URL + `/api/customers/${id}`, customer);
   }
+
+
+  deleteCustomer(id: number): Observable<any> {
+    return this.http.delete(BASE_URL + `/api/customers/${id}`);
+  }
 }

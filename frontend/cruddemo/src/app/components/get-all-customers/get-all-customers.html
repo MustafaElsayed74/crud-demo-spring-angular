@@ -44,13 +44,12 @@
                 <td class="text-center">
 
                     <!-- Edit -->
-                    <button class="btn btn-sm btn-outline-primary me-1" routerLink="/customer/{{c.id}}"
-                        (click)="editCustomer(c)">
+                    <button class="btn btn-sm btn-outline-primary me-1" routerLink="/customer/{{c.id}}">
                         <i class="bi bi-pencil"></i>
                     </button>
 
                     <!-- Delete -->
-                    <button class="btn btn-sm btn-outline-danger" (click)="deleteCustomer(c)">
+                    <button class="btn btn-sm btn-outline-danger" (click)="deleteCustomer(c.id)">
                         <i class="bi bi-trash"></i>
                     </button>
 
