@@ -13,6 +13,7 @@ export class GetAllCustomers {
   searchText: string = '';
 
   constructor(private customerService: CustomerService) {
+
   }
 
 
@@ -32,7 +33,11 @@ export class GetAllCustomers {
   editCustomer(c: any) {
 
   }
+
   deleteCustomer(c: any) {
 
   }
+
+
+
 }

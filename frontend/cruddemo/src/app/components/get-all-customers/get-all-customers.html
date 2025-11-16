@@ -44,7 +44,8 @@
                 <td class="text-center">
 
                     <!-- Edit -->
-                    <button class="btn btn-sm btn-outline-primary me-1" (click)="editCustomer(c)">
+                    <button class="btn btn-sm btn-outline-primary me-1" routerLink="/customer/{{c.id}}"
+                        (click)="editCustomer(c)">
                         <i class="bi bi-pencil"></i>
                     </button>
 

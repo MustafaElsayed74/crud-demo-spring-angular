@@ -8,7 +8,7 @@ import { UpdateCustomer } from './components/update-customer/update-customer';
 import { GetAllCustomers } from './components/get-all-customers/get-all-customers';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { RouterLink } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterLink
+    RouterLink,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

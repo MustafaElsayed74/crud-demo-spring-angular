@@ -21,4 +21,9 @@ export class CustomerService {
   getAllCustomers(): Observable<any> {
     return this.http.get(BASE_URL + '/api/customers');
   }
+
+
+  getCustomerById(id: number): Observable<any> {
+    return this.http.get(BASE_URL + `/api/customers/${id}`);
+  }
 }

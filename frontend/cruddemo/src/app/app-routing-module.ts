@@ -7,6 +7,7 @@ import { UpdateCustomer } from './components/update-customer/update-customer';
 const routes: Routes = [
   { path: '', component: GetAllCustomers },
   { path: 'customer', component: PostCustomer },
+  { path: 'customer/:id', component: UpdateCustomer }
 
 
 ];
