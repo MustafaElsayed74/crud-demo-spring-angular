@@ -32,4 +32,17 @@ public class CustomerServiceImpl implements CustomerService {
                 .orElseThrow(() -> new EntityNotFoundException("Customer not found"));
     }
 
+    @Override
+    public Customer updateCustomer(Customer customer, Long id) {
+        Customer updatedCustomer = customerRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Customer not fonud."));
+
+        updatedCustomer.setName(customer.getName());
+        updatedCustomer.setEmail(customer.getEmail());
+        updatedCustomer.setPhone(customer.getPhone());
+
+        return customerRepository.save(updatedCustomer);
+
+    }
+
 }
