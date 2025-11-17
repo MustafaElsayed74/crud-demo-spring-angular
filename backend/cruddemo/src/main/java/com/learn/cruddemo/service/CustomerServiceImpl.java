@@ -40,6 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
         updatedCustomer.setName(customer.getName());
         updatedCustomer.setEmail(customer.getEmail());
         updatedCustomer.setPhone(customer.getPhone());
+        updatedCustomer.setAddress(customer.getAddress());
 
         return customerRepository.save(updatedCustomer);
 

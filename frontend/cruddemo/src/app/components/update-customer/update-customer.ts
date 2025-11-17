@@ -29,6 +29,8 @@ export class UpdateCustomer {
       name: [null, [Validators.required]],
       phone: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
+      address: [null, [Validators.required]],
+
 
     })
     this.getCustomerById(this.id)

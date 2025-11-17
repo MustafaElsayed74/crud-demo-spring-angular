@@ -22,9 +22,11 @@ export class PostCustomer {
       name: [null, [Validators.required]],
       phone: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
+      address: [null, [Validators.required]],
 
     })
   }
+
   postCustomer() {
     console.log(this.postCustomerForm.value);
     this.customerService.postCustomer(this.postCustomerForm.value).subscribe(result => {

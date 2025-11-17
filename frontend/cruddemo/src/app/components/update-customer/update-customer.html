@@ -38,6 +38,17 @@
                 </div>
             </div>
 
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+
+                <input type="text" class="form-control" placeholder="Enter address" formControlName="address"
+                    [ngClass]="{'is-invalid': updateCustomerForm.get('address')?.invalid && updateCustomerForm.get('address')?.touched}">
+
+                <div class="invalid-feedback">
+                    Phone must be at least 10 digits
+                </div>
+            </div>
+
             <button class="btn btn-primary w-100 py-2" type="submit" (click)="updateCustomer()"
                 [disabled]="updateCustomerForm.invalid" routerLink="/">
                 Update Customer

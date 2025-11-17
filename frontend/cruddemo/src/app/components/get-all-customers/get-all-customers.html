@@ -23,6 +23,7 @@
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Address</th>
                 <th class="text-center">Action</th>
             </tr>
         </thead>
@@ -40,15 +41,14 @@
                 <td>
                     <span class="badge bg-info text-dark">{{ c.phone }}</span>
                 </td>
+                <td>{{ c.address }}</td>
 
                 <td class="text-center">
 
-                    <!-- Edit -->
                     <button class="btn btn-sm btn-outline-primary me-1" routerLink="/customer/{{c.id}}">
                         <i class="bi bi-pencil"></i>
                     </button>
 
-                    <!-- Delete -->
                     <button class="btn btn-sm btn-outline-danger" (click)="deleteCustomer(c.id)">
                         <i class="bi bi-trash"></i>
                     </button>
